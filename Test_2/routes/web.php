@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OngkirController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +21,3 @@ use App\Http\Controllers\OngkirController;
 Route::get('/', [OngkirController::class, 'index']);
 Route::post('/cek_biaya', [OngkirController::class, 'cekBiaya']);
 Route::post('/get_city', [OngkirController::class, 'getCity']);
-
-

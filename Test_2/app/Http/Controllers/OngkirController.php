@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ongkir;
+use App\Http\Requests\StoreOngkirRequest;
+use App\Http\Requests\UpdateOngkirRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Helpers\CekOngkir;
 
 class OngkirController extends Controller
 {
-    private $cekOngkir;    
-    
+    private $cekOngkir;  
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $this->cekOngkir = CekOngkir::getInstance();  
@@ -24,9 +32,9 @@ class OngkirController extends Controller
         //ambil kota yang ada di jogjakarta
         $kotaAsal = $this->cekOngkir->getCity(5)->rajaongkir->results;  
 
-        return view('cek_ongkir', compact('provinces', 'provinsiAsal', 'kotaAsal'));        
+        return view('cek_ongkir', compact('provinces', 'provinsiAsal', 'kotaAsal'));
     }
-    
+
     public function getProvinsi()
     {
 
@@ -83,6 +91,70 @@ class OngkirController extends Controller
         return response()->json($data->rajaongkir->results);
         
     }
-    
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StoreOngkirRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(StoreOngkirRequest $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Ongkir  $ongkir
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Ongkir $ongkir)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Ongkir  $ongkir
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Ongkir $ongkir)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\UpdateOngkirRequest  $request
+     * @param  \App\Models\Ongkir  $ongkir
+     * @return \Illuminate\Http\Response
+     */
+    public function update(UpdateOngkirRequest $request, Ongkir $ongkir)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Ongkir  $ongkir
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Ongkir $ongkir)
+    {
+        //
+    }
 }
