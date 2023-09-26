@@ -36,6 +36,8 @@ class Perulangan {
                 break;
             }
             
+            array_push($this->arryBageConcat, $i);
+
         }
 
         return $this->arryBageConcat;
